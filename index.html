@@ -8,23 +8,26 @@
 </head>
 <body>
     <div class="game-container">
-        <div class="start-screen" >
+        <div class="screen active" id="start-screen">
             <h1>Spyfall!</h1>
+            <input type="text" id="player-name-input" placeholder="P1">
             <div class="player-list">
-                <input type="text" class='player-name' id="p1" placeholder="P1">
-            </div> 
-            <div class="add-remove-container">
-                <button id="add-player"">Add Player</button>
-                <button id="remove-player">Remove Player</button>
+                <ul>
+                    <!-- Here the li player elements will be added -->
+                </ul>
             </div>
-            <button id="start-btn">Start Game</button>
+            <div class="add-remove-container">
+                <button id="add-player" class="reg-btn">Add Player</button>
+                <button id="remove-player" class="reg-btn">Remove Player</button>
+            </div>
+            <button id="start-btn" class="reg-btn">Start Game</button>
         </div>
 
-        <div class="game-screen">
+        <div class="screen" id="game-screen">
             <button class="player-btn" id="p1"></button>
         </div>
 
-        <div class="player-info-window">
+        <div class="screen" id="player-info-window">
             <p id="player-name-text"></p>
             <button class="close-window"></button>
             <p>Location <span id="game-location"></span></p>
