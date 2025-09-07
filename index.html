@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spyfall Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="start-screen" >
+            <h1>Spyfall!</h1>
+            <div class="player-list">
+                <input type="text" class='player-name' id="p1" placeholder="P1">
+            </div> 
+            <div class="add-remove-container">
+                <button id="add-player"">Add Player</button>
+                <button id="remove-player">Remove Player</button>
+            </div>
+            <button id="start-btn">Start Game</button>
+        </div>
+
+        <div class="game-screen">
+            <button class="player-btn" id="p1"></button>
+        </div>
+
+        <div class="player-info-window">
+            <p id="player-name-text"></p>
+            <button class="close-window"></button>
+            <p>Location <span id="game-location"></span></p>
+            <p>Role <span id="player-role"></span></p>
+        </div>
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
