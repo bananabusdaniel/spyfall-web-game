@@ -28,7 +28,6 @@ startGameBtn.addEventListener("click", () => {
     startGame();
 });
 
-let activePlayerList = [];
 let locations = [
     "Hospital", "School", "Beach", "Restaurant", "Airport", "Bank", "Supermarket", "Cinema", "Train Station", "Hotel",
     "Museum", "Library", "Park", "Factory", "Police Station", "Fire Station", "University", "Shopping Mall", "Stadium", "Cruise Ship"
