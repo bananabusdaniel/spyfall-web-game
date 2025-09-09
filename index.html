@@ -24,18 +24,19 @@
         </div>
 
         <div class="screen" id="game-screen">
-            <button class="player-btn" id="p1"></button>
+            <button class="player-btn" id="player-btn-1"></button>
         </div>
-
-        <div class="screen" id="player-info-window">
-            <p id="player-name-text"></p>
-            <button class="close-window"></button>
-            <p>Location <span id="game-location"></span></p>
-            <p>Role <span id="player-role"></span></p>
-        </div>
-
     </div>
-    
+
+    <!-- Modal overlay and modal outside game-container -->
+    <div id="modal-overlay"></div>
+    <div id="player-info-modal">
+        <p id="player-name-text"></p>
+        <button class="close-modal"></button>
+        <p>Location: <span id="game-location"></span></p>
+        <p>Role: <span id="player-role"></span></p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
