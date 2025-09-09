@@ -2,6 +2,7 @@ const textInput = document.getElementById("player-name-input");
 const addPlayerBtn = document.getElementById("add-player");
 const rmvPlayerBtn = document.getElementById("remove-player");
 const playerList = document.querySelector(".player-list ul");
+const startGameBtn = document.getElementById("start-btn");
 
 addPlayerBtn.addEventListener("click", addPlayer);
 rmvPlayerBtn.addEventListener("click", rmvPlayer);
@@ -116,7 +117,7 @@ function addPlayer(){
     const newPlayer = document.createElement("li");
     newPlayer.textContent = name;
     playerList.appendChild(newPlayer);
-    activePlayerList.append(name);
+    activePlayerList.push(name);
 
     textInput.value = '';
 }
