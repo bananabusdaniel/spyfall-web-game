@@ -122,6 +122,10 @@ function addPlayer(){
 }
 
 function rmvPlayer(){
+    if (activePlayerList.length === 0) {
+        alert("No players to remove.");
+        return;
+    }
     playerList.removeChild(playerList.lastElementChild)
     activePlayerList.pop();
 }
