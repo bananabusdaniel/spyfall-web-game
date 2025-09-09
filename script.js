@@ -129,3 +129,65 @@ function rmvPlayer(){
     playerList.removeChild(playerList.lastElementChild)
     activePlayerList.pop();
 }
+
+function startGame() {
+    const gameScreen = document.getElementById("game-screen");
+    
+    // Remove any existing player buttons
+    gameScreen.innerHTML = '';
+
+    let randomLocationIndex = Math.floor(Math.random() * locations.length);
+    let gameLocation = locations[randomLocationIndex];
+    let locationRoles = roles[gameLocation];
+    let spyIndex = Math.floor(Math.random() * activePlayerList.length);
+    
+    // Add a button for each player
+    activePlayerList.forEach((player, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "player-btn";
+        
+        btn.textContent = player;
+        btn.id = `player-btn-${idx}`;
+        let playerRole;
+        if (idx === spyIndex) {
+            playerRole = "Spy";
+        }
+        else{
+            let roleIndex = Math.floor(Math.random() * locationRoles.length);  
+            playerRole = locationRoles[roleIndex];
+            locationRoles.splice(roleIndex, 1); // Remove assigned role to avoid duplicates
+        }
+
+        btn.addEventListener("click", (event) => {
+            openPlayerInfo(gameLocation, playerRole, event);
+        });
+
+        gameScreen.appendChild(btn);
+    });
+}
+
+function openPlayerInfo(location, role, event) {
+    const gameLocationElement = document.getElementById("game-location");
+    if (role !== "Spy"){
+        gameLocationElement.textContent = location;
+    } else {
+        gameLocationElement.textContent = "?????";
+    }
+
+    const playerRoleElement = document.getElementById("player-role");
+    playerRoleElement.textContent = role;
+
+    event.target.style.backgroundColor = 'rgb(224, 253, 243)';
+    const playerInfoModal = document.getElementById("player-info-modal");
+    const modalOverlay = document.getElementById("modal-overlay");
+    playerInfoModal.classList.add("active");
+    modalOverlay.classList.add("active");
+    const closeModalBtn = document.querySelector("#player-info-modal .close-modal");
+    closeModalBtn.onclick = () => {
+        playerInfoModal.classList.remove("active");
+        modalOverlay.classList.remove("active");
+    };
+    const playerNameText = document.getElementById("player-name-text");
+    playerNameText.textContent = event.target.textContent;
+    //set location and role
+}
