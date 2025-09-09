@@ -26,3 +26,9 @@ https://bananabusdaniel.github.io/spyfall-web-game/
 - `index.html` — Main HTML structure
 - `style.css` — UI styling
 - `script.js` — Game logic
+
+## To implement
+
+- Better styling for different size devices
+- Animations
+- Playing with friends online feature (through game code)
