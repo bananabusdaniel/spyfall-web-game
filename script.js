@@ -4,6 +4,17 @@ const rmvPlayerBtn = document.getElementById("remove-player");
 const playerList = document.querySelector(".player-list ul");
 const startGameBtn = document.getElementById("start-btn");
 
+let activePlayerList = [];
+
+window.addEventListener("load", () => {
+    activePlayerList = JSON.parse(localStorage.getItem("players")) || [];
+    activePlayerList.forEach(name => {
+        const newPlayer = document.createElement("li");
+        newPlayer.textContent = name;
+        playerList.appendChild(newPlayer);
+    })
+});
+
 addPlayerBtn.addEventListener("click", addPlayer);
 rmvPlayerBtn.addEventListener("click", rmvPlayer);
 
@@ -133,7 +144,8 @@ function rmvPlayer(){
 
 function startGame() {
     const gameScreen = document.getElementById("game-screen");
-    
+    localStorage.setItem("players", JSON.stringify(activePlayerList));
+
     // Remove any existing player buttons
     gameScreen.innerHTML = '';
 
@@ -165,6 +177,13 @@ function startGame() {
 
         gameScreen.appendChild(btn);
     });
+
+    const restartBtn = document.createElement("button");
+    restartBtn.className = "reg-btn";
+    restartBtn.id = "restart-btn";
+    restartBtn.textContent = "Restart Game";
+    gameScreen.appendChild(restartBtn);
+    restartBtn.onclick = () => location.reload();
 }
 
 function openPlayerInfo(location, role, event) {
