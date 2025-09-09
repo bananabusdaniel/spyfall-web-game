@@ -81,3 +81,25 @@ li {
     border: 1px solid #333;
     padding: 5px;
 }
+.player-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: beige;
+    color: #333;
+    border: 2px solid #eadbc8;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.player-btn:last-child {
+    margin-bottom: 0;
+}
+
+.player-btn:hover {
+    transform: scale(1.05);
+}
