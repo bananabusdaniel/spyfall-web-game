@@ -1,7 +1,8 @@
 {
   "name": "Spyfall",
   "short_name": "Spyfall",
-  "start_url": "/",
+  "start_url": "https://bananabusdaniel.github.io/spyfall-web-game/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#111111",
